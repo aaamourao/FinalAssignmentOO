@@ -60,7 +60,23 @@ public class ContactList {
     }
 
     public int getIndex(Contact contact) {
-        return contacts.indexOf(contact);
+        // return contacts.indexOf(contact); wont work
+        // cant add methods to Contact or UML won't match
+        // This is not the ideal solution
+
+        int index;
+
+        for (index = 0; index < contacts.size(); ++index) {
+            if (contact.getUsername().equals(contacts.get(index).getUsername())) {
+                break;
+            }
+        }
+
+        if (index == contacts.size()) {
+            index = -1; // mimic ArrayList<>.indexOf()
+        }
+
+        return index;
     }
 
     public boolean hasContact(Contact contact) {
