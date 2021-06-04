@@ -104,7 +104,7 @@ public class ItemList {
 
     public ArrayList<Contact> getActiveBorrowers() {
         ArrayList<Contact> active_borrowers = new ArrayList<Contact>();
-        for (item i : items) {
+        for (Item i : items) {
             Contact borrower = i.getBorrower();
             if (borrower != null) {
                 active_borrowers.add(borrower);
